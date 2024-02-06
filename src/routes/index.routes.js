@@ -1,12 +1,10 @@
 import { Router } from 'express';
-
+import { notesRoutes } from './note.routes.js';
+import { userRoutes } from './user.routes.js';
 
 const routes = Router();
 
-routes.get('/', (req, res) => {
-    res.send({
-        msg: 'hola'
-    })
-});
+userRoutes(routes);
+notesRoutes(routes);
 
 export default routes;
