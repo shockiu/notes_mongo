@@ -1,5 +1,5 @@
 
-import { Server } from './server/server.config.js';
+import { Server } from './config/server.config.js';
 const server = new Server();
 
 server.listen();

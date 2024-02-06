@@ -1,7 +1,7 @@
 import express from "express";
 import cors from 'cors';
 import morgan from 'morgan';
-import '../config/db.js'
+import './db.config.js'
 import routesApi from '../routes/index.routes.js';
 
 export class Server { 
