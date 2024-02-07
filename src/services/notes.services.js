@@ -17,15 +17,15 @@ export class NoteService extends BaseRepository {
     }
 
     async findNotesById(id) {
-        return await this.findNotesById(id);
+        return await this.findId(id);
     }
 
     async updateNote(data) {
         const { id, ...rest } = data;
-        return await this.update({id}, rest);
+        return await this.update({_id: id }, rest);
     }
 
     async deleteNote(id) {
-        return await this.delete(id);
+        return await this.delete({_id: id});
     }
 }
