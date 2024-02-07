@@ -8,7 +8,11 @@ export class BaseRepository {
     }
 
     async findId(id) {
-        return await this.model.findById(id)
+        return await this.model.findById(id);
+    }
+
+    async findOne(filter) {
+        return await this.model.findOne(filter).lean();
     }
 
     async findAll(filter) {

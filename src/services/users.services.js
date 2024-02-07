@@ -9,6 +9,14 @@ export class UserService extends BaseRepository {
         super(UserSchema);
     }
 
+    async login(data) {
+        const user = await this.findOne({ email: data.email });
+        if (!user) throw 'notFound';
+        if( !(await bcrypt.compare(data.password, user.password)) ) throw 'incorrectPassword';
+        const { password, ...rest } = user;
+        return rest;
+    }   
+
     async createUser(data) {
         const salt = await bcrypt.genSalt(10);
         data.password = await bcrypt.hash(data.password, salt);

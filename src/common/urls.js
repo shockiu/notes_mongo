@@ -1,4 +1,6 @@
 export const URLS = {
+    login: '/login',
+
     note: '/note',
     noteId: '/note/:id',
     notes: '/notes',
